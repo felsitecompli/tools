@@ -1,0 +1,358 @@
+/* Global dark mode */
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+}
+
+/* App layout */
+nav {
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #222;
+  background: #000;
+}
+
+nav button {
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease, transform .02s ease;
+}
+
+nav button:hover {
+  background: #1b1b1b;
+  border-color: #444;
+}
+
+nav button:active {
+  transform: translateY(1px);
+}
+
+.content {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Inputs and controls */
+button, input, select, textarea {
+  background-color: #0e0e0e;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+a {
+  color: #76a9ff;
+}
+
+/* Optional: subtle scrollbars */
+* {
+  scrollbar-color: #333 #000;
+}
+
+.git-parse {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.git-parse__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.git-parse__field--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.git-parse__field--inline input {
+  flex: 1;
+}
+
+.git-parse__field input,
+.git-parse__field textarea {
+  padding: 8px 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.git-parse__field .git-parse__stash-suffix,
+.git-parse__field .git-parse__stash-command {
+  width: auto;
+}
+
+.git-parse__textarea-grow {
+  overflow-y: hidden;
+  resize: none;
+}
+
+.git-parse__field--compact {
+  gap: 0;
+}
+
+.git-parse__ticket-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.git-parse__ticket-input {
+  flex: 1;
+  min-width: 0;
+  padding: 2px 8px;
+  line-height: 1.15;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.git-parse__field--compact + .git-parse__output--links {
+  margin-top: -6px;
+}
+
+.git-parse__description-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.git-parse__description-row textarea,
+.git-parse__description-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.git-parse__add-url {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.git-parse__add-url:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.git-parse__stash-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.git-parse__stash-suffix {
+  flex: 0 1 auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  box-sizing: border-box;
+}
+
+.git-parse__stash-btn {
+  padding: 6px 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.git-parse__stash-command {
+  flex: 1 1 12rem;
+  min-width: 0;
+  max-width: 100%;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.git-parse__output-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.15;
+}
+
+.git-parse__output--links {
+  gap: 4px;
+}
+
+.git-parse__link-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.15;
+  min-height: 1.15em;
+}
+
+.git-parse__link-row a {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.git-parse__output-row a,
+.git-parse__output-row .git-parse__command {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.git-parse__copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  width: 1.25em;
+  height: 1.15em;
+  box-sizing: border-box;
+  min-height: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  color: #fff;
+  line-height: 1;
+}
+
+.git-parse__copy-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.git-parse__copy-btn svg {
+  display: block;
+  width: 0.85em;
+  height: 0.85em;
+}
+
+.git-parse__checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.git-parse__checkbox--end {
+  margin-left: auto;
+  align-self: flex-start;
+}
+
+.git-parse__output {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.git-parse__command {
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #0e0e0e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 13px;
+}
+
+.git-parse__hint {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.git-parse__markdown {
+  padding: 12px 14px;
+  box-sizing: border-box;
+  background: #0e0e0e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.git-parse__markdown > :first-child {
+  margin-top: 0;
+}
+
+.git-parse__markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.git-parse__markdown h1,
+.git-parse__markdown h2,
+.git-parse__markdown h3 {
+  border-bottom: 1px solid #222;
+  padding-bottom: 4px;
+}
+
+.git-parse__markdown hr {
+  border: none;
+  border-top: 1px solid #333;
+}
+
+.git-parse__markdown code {
+  background: #1b1b1b;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 13px;
+}
+
+.git-parse__markdown pre {
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.git-parse__markdown pre code {
+  background: none;
+  padding: 0;
+}
+
+.git-parse__markdown blockquote {
+  margin: 0;
+  padding-left: 12px;
+  border-left: 3px solid #333;
+  color: #aaa;
+}
+
+.git-parse__markdown table {
+  border-collapse: collapse;
+}
+
+.git-parse__markdown th,
+.git-parse__markdown td {
+  border: 1px solid #333;
+  padding: 6px 10px;
+}
